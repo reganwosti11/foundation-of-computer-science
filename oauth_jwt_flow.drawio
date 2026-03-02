@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Vertical OAuth JWT Flow">
+    <mxGraphModel dx="800" dy="1600" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Client Requests Authorization -->
+        <mxCell id="2" value="Client Application&#xa;(Requests Authorization)" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="40" width="360" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Authorization Server -->
+        <mxCell id="3" value="Authorization Server&#xa;(User Authentication)" style="rounded=1;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="220" y="140" width="360" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- JWT Creation -->
+        <mxCell id="4" value="JWT Creation&#xa;Header + Payload + Signature" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="240" width="360" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Base64URL Encoding -->
+        <mxCell id="5" value="Base64URL Encoding&#xa;(Each JWT Component Encoded)" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="340" width="360" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- HTTPS Transmission -->
+        <mxCell id="6" value="Token Sent via HTTPS&#xa;(TLS Encryption in Transit)" style="rounded=1;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="440" width="360" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Client Stores Token -->
+        <mxCell id="7" value="Client Stores JWT&#xa;(Authorization Header: Bearer Token)" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="540" width="360" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Resource Server -->
+        <mxCell id="8" value="Resource Server&#xa;(Receives Token)" style="rounded=1;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="220" y="640" width="360" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- TLS Decryption -->
+        <mxCell id="9" value="TLS Decryption" style="rounded=1;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="740" width="360" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Base64URL Decoding -->
+        <mxCell id="10" value="Base64URL Decoding&#xa;(Header + Payload Extracted)" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="840" width="360" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Signature Verification -->
+        <mxCell id="11" value="Signature Verification&#xa;(Grant or Deny Access)" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="940" width="360" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrows -->
+        <mxCell edge="1" parent="1" source="2" target="3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="3" target="4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="4" target="5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="5" target="6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="6" target="7"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="7" target="8"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="8" target="9"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="9" target="10"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="10" target="11"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
